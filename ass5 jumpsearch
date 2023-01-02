@@ -1,0 +1,79 @@
+#include"stdio.h"
+#include"math.h"
+
+
+int min(int a, int b){
+    
+    if ( b > a){
+        
+        return a;
+    } else {
+        
+        return b;
+    }
+    
+}
+
+
+
+int jumpSearch( int arr[] , int size , int key){
+    
+    int step= sqrt(size);
+    
+    int previous = 0;
+    
+    printf(" Currently finding with jumpsearch at index %d\n",step -1);
+    
+    while ( arr[min(step , size)-1] < key){
+        
+        previous = step;
+        
+        step = step+ sqrt(size);
+        
+        printf(" Currently finding with jumpsearch at index %d\n",step -1);
+        
+        if (previous >= size ){
+            
+            return -1;
+        }
+        
+        
+    }
+    
+    for (int j = previous ; j < step ; j++){
+        
+        if (arr[j] == key) {
+            
+            return j;
+        }
+        
+    }
+    return -1;
+
+}
+
+int main(){
+    
+    int arr[]={ 1, 4, 9, 16, 25, 36, 49, 64, 81, 100 , 121, 144};
+    
+    int size = sizeof(arr) / 3;
+    
+    int Find= 81;
+    
+    int index = jumpSearch(arr, size , Find);
+    
+    if (index != -1 ) {
+        
+        printf(" We found\n");
+        printf(" found at index %d : data %d", index , arr[index]);
+        
+    }else {
+        
+        printf(" Not found\n");
+        
+    }
+   
+    
+return 0;
+    
+}
