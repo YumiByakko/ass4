@@ -1,3 +1,8 @@
+
+// Created by Yumi Byakko
+
+// yumibyakko@gmail.com
+
 #include"stdio.h"
 #include"math.h"
 
@@ -58,7 +63,7 @@ int main(){
     
     int size = sizeof(arr) / 3;
     
-    int Find= 81;
+    int Find= 51;
     
     int index = jumpSearch(arr, size , Find);
     
